@@ -1,0 +1,42 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" href="login.component.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="wrapper">
+        <form [formGroup]="myForm" (ngSubmit)="save()">
+            <h1>Connectez-vous à votre compte</h1>
+            <div class="input-box">
+                <input  placeholder="Email" required  type="email" formControlName="email">
+                <i class='bx bxs-user'></i>
+                <div *ngIf="myForm.get('email')?.touched && myForm.get('email')?.invalid">
+                    <small class="text-danger" *ngIf="myForm.get('email')?.errors?.['required']">L'email est requis</small>
+                    <small class="text-danger" *ngIf="myForm.get('email')?.errors?.['email']">Email invalide</small>
+                </div>
+            </div>
+            <div class="input-box">
+                <input  placeholder="password" required type="password" formControlName="password">
+                <i class='bx bxs-lock-alt'></i>
+                <div *ngIf="myForm.get('password')?.touched && myForm.get('password')?.invalid">
+                    <small class="text-danger" *ngIf="myForm.get('password')?.errors?.['required']">Le mot de passe est requis</small>
+                    <small class="text-danger" *ngIf="myForm.get('password')?.errors?.['password']">Mot de passe invalide</small>
+                </div>
+                
+            </div>
+            <div class="remember-forgot">
+                <a href="#">Mot de passe oublié?</a>
+            </div>
+              <button type="submit" class="submit">connexion</button>
+              <div class="register-link">
+                <p>Vous n'avez pas de compte?<a href="inscription">S'inscrire</a></p>
+              </div>
+        </form>
+
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,113 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  background-color: #fde5d7;
+  height: 10vh; /* Hauteur à 100% de la hauteur de la vue (viewport height) */
+  display: flex;
+  
+}
+
+.navbar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  width: 150%; /* Largeur à 50% */
+}
+
+.navbar ul.left {
+  justify-content: flex-end; /* Aligner le contenu à droite */
+}
+
+.navbar ul.right {
+  justify-content: flex-start; /* Aligner le contenu à gauche */
+}
+
+.navbar ul li {
+  position: relative;
+}
+
+.navbar ul li a {
+  display: block;
+  padding: 10px 20px;
+  color: #080808;
+  text-decoration: none;
+}
+
+.navbar ul li:hover > ul {
+  display: block;
+}
+
+.navbar ul ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  background-color: #fef5f5;
+}
+
+.navbar ul ul li {
+  width: 200px;
+}
+
+.navbar ul ul li a {
+  padding: 10px 20px;
+}
+
+.navbar ul ul ul {
+  left: 100%;
+  top: 0;
+}
+
+
+.navbar li {
+  margin-left: 10px; /* Add some space between items */
+}
+
+.navbar input[type="text"] {
+  width: 200px; /* Adjust width as needed */
+  font-size: 100%;
+  font-weight: bold;
+  text-align: right;
+  background-color: #fffeff;
+  color: #fdfcfc;
+  border: 0;
+  border-radius: 24px;
+  padding: 10px 16px;
+  cursor: pointer;
+  transition: background-color .3s ease;
+}
+
+.navbar button {
+  background-color: #eec5ad;
+  color: #fff;
+  border: 0;
+  border-radius: 24px;
+  padding: 10px 16px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color .3s ease;
+}
+.btn-primary{ background-color: #eec5ad;
+  color: #fff;
+  border: 0;
+  border-radius: 24px;
+  padding: 10px 16px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color .3s ease;}
+
+.cart-icon {
+  margin-left: auto; /* Push the cart icon to the right */
+}
+

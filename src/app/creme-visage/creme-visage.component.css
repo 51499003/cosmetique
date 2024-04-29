@@ -1,0 +1,303 @@
+.cartes-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .ligne {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+  }
+  
+  .carte {
+    margin-right: 10px; /* Espacement entre les cartes */
+    padding: 10px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+  }
+  
+  .star-radio {
+    display: none;
+  }
+  
+  .rating label {
+    cursor: pointer;
+  }
+  
+  .rating label svg {
+    fill: #f0c30f; /* Couleur jaune pour les étoiles */
+    width: 50px;
+    height: 50px;
+  }
+  
+  .rating label:hover svg,
+  .rating input:checked + label svg {
+    fill: #e0a80c; /* Couleur différente pour les étoiles survolées ou sélectionnées */
+  }
+  
+  /* Ajout de styles pour les radio boutons */
+  .rating input[type="radio"] {
+    display: none; /* Cache les radio boutons par défaut */
+  }
+  
+  .rating input[type="radio"] + label {
+    cursor: pointer;
+  }
+  
+  .rating svg {
+    width: 2rem;
+    height: 2rem;
+    overflow: visible;
+    fill: transparent;
+    stroke: var(--stroke);
+    stroke-linejoin: bevel;
+    stroke-dasharray: 12;
+    animation: idle 4s linear infinite;
+    transition: stroke 0.2s, fill 0.5s;
+  }
+  
+  @keyframes idle {
+    from {
+        stroke-dashoffset: 24;
+    }
+  }
+  
+  .rating label:hover svg {
+    stroke: var(--fill);
+  }
+  
+  .rating input:checked ~ label svg {
+    transition: 0s;
+    animation: idle 4s linear infinite, yippee 0.75s backwards;
+    fill: var(--fill);
+    stroke: var(--fill);
+    stroke-opacity: 0;
+    stroke-dasharray: 0;
+    stroke-linejoin: miter;
+    stroke-width: 8px;
+  }
+  
+  @keyframes yippee {
+    0% {
+        transform: scale(1);
+        fill: var(--fill);
+        fill-opacity: 0;
+        stroke-opacity: 1;
+        stroke: var(--stroke);
+        stroke-dasharray: 10;
+        stroke-width: 1px;
+        stroke-linejoin: bevel;
+    }
+  
+    30% {
+        transform: scale(0);
+        fill: var(--fill);
+        fill-opacity: 0;
+        stroke-opacity: 1;
+        stroke: var(--stroke);
+        stroke-dasharray: 10;
+        stroke-width: 1px;
+        stroke-linejoin: bevel;
+    }
+  
+    30.1% {
+        stroke: var(--fill);
+        stroke-dasharray: 0;
+        stroke-linejoin: miter;
+        stroke-width: 8px;
+    }
+  
+    60% {
+        transform: scale(1.2);
+        fill: var(--fill);
+    }
+  }
+  
+  
+  /* Mise en forme générale */
+  .cartes-container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .carte {
+    display: flex;
+    max-width: 600px; /* ajustez selon vos besoins */
+    border: 1px solid #ccc;
+    margin: 10px;
+    position: relative; /* Pour positionner le paragraphe */
+  }
+  
+  /* Positionnement et mise en forme des images */
+  .carte .col-md-4 {
+    display: flex;
+    align-items: center;
+  }
+  
+  .carte img {
+    width: 100%;
+    height: auto;
+  }
+  
+  /* Mise en forme des titres */
+  h1 {
+    color: #333;
+    font-size: 20px;
+    text-align: center;
+  }
+  
+  h2 {
+    color: pink;
+    font-size: 30px;
+    text-align: center;
+  }
+  
+  h3 {
+    color: #333;
+    font-size: 14px;
+    text-align: center;
+  }
+  
+  /* Mise en forme du texte en dessous de l'image */
+  .card-text {
+    padding: 10px;
+    text-align: center; /* Centrer le contenu */
+  }
+  
+  /* Mise en forme générale */
+  .cartes-container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .carte {
+    display: flex;
+    max-width: 600px; /* ajustez selon vos besoins */
+    border: 1px solid #ccc;
+    margin: 10px;
+    position: relative; /* Pour positionner le paragraphe */
+  }
+  
+  /* Positionnement et mise en forme des images */
+  .carte .col-md-4 {
+    display: flex;
+    align-items: center;
+  }
+  
+  .carte img {
+    width: 100%;
+    height: auto;
+  }
+  
+  /* Mise en forme des titres */
+  h1 {
+    color: #333;
+    font-size: 20px;
+    text-align: center;
+  }
+  
+  h2 {
+    color: pink;
+    font-size: 30px;
+    text-align: center;
+  }
+  
+  h3 {
+    color: #333;
+    font-size: 14px;
+    text-align: center;
+  }
+  
+  /* Mise en forme du texte en dessous de l'image */
+  .card-text {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between; /* Pour séparer h5 et span */
+  }
+  
+  /* Mise en forme des éléments à droite */
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .card-body h5 {
+    text-align: left; /* Alignement à gauche */
+    font-weight: bold;
+    color: #333; /* couleur foncée */
+  }
+  
+  .card-body h5 .card-title {
+    color: pink; /* couleur rose */
+    font-weight: bold;
+    font-size: 14px;
+  }
+  
+  /* Affichage du paragraphe au survol de l'image */
+  .carte:hover p {
+    display: block;
+    color: green; /* couleur verte */
+  }
+  
+  /* Par défaut, le paragraphe est caché */
+  .carte p {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 10px;
+  }
+  
+  /* Bouton d'achat */
+  .btn {
+    position: relative; /* Positionnement relatif */
+    z-index: 1; /* Assurez-vous que le bouton est au-dessus du reste */
+    background-color: rgb(199, 43, 69); /* Couleur rose */
+    font-size: 20px; /* Taille du texte */
+  }
+  
+  /* Centrer le bouton */
+  .btn-container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  /* Centrer les boutons radio */
+  .rating {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .cartes-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .ligne {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+  }
+  
+  .carte {
+    flex: 0 0 calc(33.33% - 20px);
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+  }
+  
+  @media (max-width: 900px) {
+    .carte {
+      flex: 0 0 calc(50% - 20px);
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .carte {
+      flex: 0 0 calc(100% - 20px);
+    }
+  }

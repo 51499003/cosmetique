@@ -1,0 +1,37 @@
+.ligne {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .card {
+    flex: 0 0 calc(33.333% - 1rem); /* Adjust as needed */
+    margin-right: 1rem; /* Adjust as needed */
+    margin-bottom: 1rem; /* Adjust as needed */
+  }
+  .card-img-top {
+    width: 60%;
+    height: 60%;
+    object-fit: contain; /* ou cover, selon le comportement désiré */
+}
+.card-body .btn {
+    background-color: pink;
+    border-color: pink;
+    color: white;
+}
+
+.card-body .btn:hover {
+    background-color: lightpink;
+    border-color: lightpink;
+    color: white;
+}
+.card-img-top:hover + .card-body h6 {
+    color: pink;
+}
+.card-body h6 {
+    display: none;
+}
+
+.card-img-top:hover + .card-body h6 {
+    display: block;
+    color: rgb(19, 190, 128);
+}

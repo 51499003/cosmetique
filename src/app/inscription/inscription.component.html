@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" href="inscription.component.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="wrapper">
+        <form [formGroup]="myForm" (ngSubmit)="save()">
+            <h1>Inscription </h1>
+            <div class="input-box">
+                <input class="input-box" placeholder="nom"  type="text" name="nom" formControlName="nom">
+                <i class='bx bxs-user'></i>
+                <div *ngIf="nom!.touched && nom!.invalid">
+                    <small class="text-danger" *ngIf="nom?.errors?.['required']">nom is required</small>
+                    <small class="text-danger" *ngIf="nom!.errors?.['minlength']">il faut min 3 car</small>
+               
+                   
+                </div>
+            </div>
+            <div class="input-box">
+                <input class="input-box" placeholder="prenom" type="text" name="prenom" formControlName="prenom">
+                <i class='bx bx-user'></i>
+                <div *ngIf="prenom!.touched && prenom!.invalid">
+                    <small class="text-danger" *ngIf="prenom?.errors?.['required']">prenom is required</small>
+                    <small class="text-danger" *ngIf="prenom!.errors?.['minlength']">il faut min 3 car</small>
+                    
+                </div>
+            </div>
+            <div class="input-box">
+                <input class="input-box" placeholder="telephone" type="number" name="telephone" formControlName="telephone">
+                <i class='bx bxs-phone'></i>
+                <div *ngIf="telephone!.touched && telephone!.invalid">
+                    <small class="text-danger" *ngIf="telephone?.errors?.['required']">telephone is required</small>
+                    <small class="text-danger" *ngIf="telephone!.errors?.['pattern']">invalid telephone</small>
+                  
+                </div>
+            </div>
+            <div class="input-box">
+                <input class="input-box"  placeholder="email" name="email" formControlName="email">
+                <i class='bx bxs-envelope' ></i>
+                <div *ngIf="email!.touched && email!.invalid">
+                    <small class="text-danger" *ngIf="email?.errors?.['required']">email is required</small>
+                    <small class="text-danger" *ngIf="email!.errors?.['email']">invalid email</small>
+                   
+                </div>
+            </div>
+            <div class="input-box">
+                <input class="input-box"  placeholder="password" name="password" formControlName="password" >
+                <i class='bx bxs-lock-alt'></i>
+                <div *ngIf="password!.touched && password!.invalid">
+                    <small class="text-danger" *ngIf="password?.errors?.['required']">password is required</small>
+                    <small class="text-danger" *ngIf="password!.errors?.['password']">invalid password</small>
+                   
+            </div>
+                </div>
+                <button type="submit" class="submit">connexion</button>
+           
+        
+        </form>
+    </div>
+</body>
+</html>

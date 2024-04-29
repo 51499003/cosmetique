@@ -1,0 +1,38 @@
+.footer {
+    display: flex;
+      background-color: #d2b48c; /*  nude choco */
+   /* background-color: #87ceeb; /* Bleu Ciel  */ 
+    /* background-color: #f4d2a5; /*  */
+   /* background-color: #fde5d7; /* Nude Blush  navbar*/
+}
+
+.footer > div {
+    flex: 1;
+    padding: 20px;
+    border-right: 1px solid #000; /* Ligne verticale entre les divs */
+    box-sizing: border-box;
+}
+
+.footer > div:last-child {
+    border-right: none; /* Supprimer la ligne verticale pour le dernier div */
+}
+
+.footer h1 {
+    margin: 0;
+    text-decoration: underline;
+    font-size: smaller;
+    font-size: 30px;
+}
+
+.footer p {
+    margin: 5px 0;
+}
+
+.footer img {
+    vertical-align: middle;
+    margin-right: 5px;
+}
+.products-heading {
+    margin-bottom: 0; /* Supprime la marge en bas */
+}
+
